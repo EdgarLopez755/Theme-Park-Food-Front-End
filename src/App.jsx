@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Landing from './components/Landing/Landing'
 import Dashboard from './components/Dashboard/Dashboard'
@@ -11,6 +11,7 @@ import * as foodService from './services/foodService'
 
 import FoodList from './components/FoodList/FoodList'
 import FoodDetails from './components/FoodDetails/FoodDetails'
+import FoodForm from './components/FoodForm/FoodForm'
 
 
 
@@ -18,6 +19,8 @@ import FoodDetails from './components/FoodDetails/FoodDetails'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [foods, setFoods] = useState([])
+
+  const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -35,6 +38,11 @@ const App = () => {
     setUser(null)
   }
 
+  const handleAddFood = async (foodFormData) => {
+    const newFood = await foodService.create(foodFormData)
+    setFoods([newFood, ...foodsData])
+    navigate('/foods')
+  }
   return (
     <>
       <NavBar user={user}  handleSignout={handleSignout} /> 
@@ -44,6 +52,7 @@ const App = () => {
           <Route path="/" element={<Dashboard user={user} />} />
           <Route path="/foods" element={<FoodList foods={foods} />} />
           <Route path="/foods/:foodId" element={<FoodDetails />} />
+          <Route path="/foods/new" element={<FoodForm handleAddFood={handleAddFood} />} />
           </>
         ) : (
           <Route path='/' element={<Landing />} />

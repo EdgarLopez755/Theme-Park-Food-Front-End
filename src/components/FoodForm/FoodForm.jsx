@@ -1,0 +1,68 @@
+import { useState } from 'react'
+
+const FoodForm = (props) => {
+    const [formData, setFormData] = useState({
+        name: '',
+        text: '',
+        location: 'Main Street'
+    })
+
+    const handleChange = (evt) => {
+        setFormData({ ...formData, [evt.target.name]: evt.target.value })
+    }
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault()
+        props.handleAddFood(formData)
+    }
+
+
+    return (
+        <main>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor='name-imput'>Name</label>
+                <input
+                    required
+                    type='text'
+                    name='name'
+                    id='name-input'
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+                <label htmlFor='text-input'>Text</label>
+                <textarea
+                    required
+                    type='text'
+                    name='text'
+                    id='text-input'
+                    value={formData.text}
+                    onChange={handleChange}
+                />
+                <label htmlFor='location-input'>Location</label>
+                <select
+                    required
+                    name='location'
+                    id='location-input'
+                    value={formData.location}
+                    onChange={handleChange}
+                >
+                    <option value="Main Street">Main Street</option>
+                    <option value="Tomorrowland">Tomorrowland</option>
+                    <option value="Adventureland">Adventureland</option>
+                    <option value="Fantasyland">Fantasyland</option>
+                    <option value="Frontierland">Frontierland</option>
+                    <option value="StarWars land">StarWars land</option>
+                    <option value="New Orleans Square">New Orleans Square</option>
+                    <option value="Toon Town">Toon Town</option>
+                    
+                </select>
+                <button type='submit'>Submit</button>
+
+
+
+            </form>
+        </main>
+    )
+}
+
+export default FoodForm
