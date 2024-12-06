@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard/Dashboard'
 import SignupForm from './components/SignupForm/SignupForm'
 import SigninForm from './components/SigninForm/SigninForm'
 import * as authService from './services/authService'
+import FoodList from './components/FoodList/FoodList'
 
 
 const App = () => {
@@ -22,10 +23,13 @@ const App = () => {
       <NavBar user={user}  handleSignout={handleSignout} /> 
       <Routes>
         { user ? (
+          <> 
           <Route path="/" element={<Dashboard user={user} />} />
+          <Route path="/foods" element={<FoodList />} />
+          </>
         ) : (
           <Route path='/' element={<Landing />} />
-        
+          
         )}
         <Route path='/signup' element={<SignupForm setUser={setUser} />} />
         <Route path='/signin' element={<SigninForm setUser={setUser} />} />
