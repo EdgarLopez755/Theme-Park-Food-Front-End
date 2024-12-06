@@ -10,7 +10,8 @@ import * as foodService from './services/foodService'
 
 
 import FoodList from './components/FoodList/FoodList'
-import FoodDetails from './components/FoodDetails/FoodDeatails'
+import FoodDetails from './components/FoodDetails/FoodDetails'
+
 
 
 
