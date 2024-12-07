@@ -13,8 +13,8 @@ const FoodList = (props) => {
                                 <p>
                                     {food.text}
                                 </p>
+                                <p>{food.author.username} posted on {new Date(food.createdAt).toLocaleDateString()}</p>
                             </header>
-                            <p>{food.author.username} posted on {new Date(food.createdAt).toLocaleDateString()}</p>
                         </article>
                     </Link>
                 )

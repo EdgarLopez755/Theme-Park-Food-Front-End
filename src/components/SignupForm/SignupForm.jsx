@@ -40,7 +40,7 @@ const SignupForm = (props) => {
 
   return (
     <main>
-      <h1>Sign Up</h1>
+      <h1>Sign Up For Disney Foods!</h1>
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
         <div>
