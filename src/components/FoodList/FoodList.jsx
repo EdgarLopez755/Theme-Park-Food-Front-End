@@ -9,6 +9,7 @@ const FoodList = (props) => {
                         <article>
                             <header>
                                 <h2>{food.name}</h2>
+                                <h3>{food.location}</h3>
                                 <p>
                                     {food.text}
                                 </p>

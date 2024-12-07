@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import * as foodService from '../../services/foodService'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import * as foodService from '../../services/foodService'
 
 
 const FoodForm = (props) => {
@@ -10,7 +10,15 @@ const FoodForm = (props) => {
         location: 'Main Street'
     })
 
-    
+    const { foodId } = useParams()
+
+    useEffect(()=> {
+        const fetchFood = async () => {
+            const foodData = await foodService.show(foodId)
+            setFormData(foodData)
+        }
+        if(foodId) fetchFood()
+      }, [foodId])
 
     const handleChange = (evt) => {
         setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -18,13 +26,20 @@ const FoodForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
+        if (foodId) {
+            props.handleUpdateFood(foodId, formData)
+        } else {
         props.handleAddFood(formData)
+        }
     }
+
+    
 
 
     return (
         <main>
             <form onSubmit={handleSubmit}>
+                <h1>{foodId ? 'Edit Food' : 'New Food'}</h1>
                 <label htmlFor='name-imput'>Name</label>
                 <input
                     required

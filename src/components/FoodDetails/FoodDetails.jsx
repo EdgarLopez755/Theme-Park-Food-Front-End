@@ -1,5 +1,5 @@
 
-// import { AuthedUserContext } from '../../App'
+import { AuthedUserContext } from '../../App'
 import { useState, useEffect, useContext } from "react"
 import { useParams, Link } from "react-router-dom"
 
@@ -11,7 +11,7 @@ import CommentForm from "../CommentForm/CommentForm"
 const FoodDetails = (props) => {
     const {foodId} = useParams()
     const [food, setFood] = useState(null)
-    // const user = useContext(AuthedUserContext)
+    const user = useContext(AuthedUserContext)
     
 
     useEffect(() => {

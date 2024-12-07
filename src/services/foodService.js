@@ -69,5 +69,21 @@ const deleteFood = async (foodId) => {
   }
 };
 
+async function update(foodId, foodFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${foodId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(foodFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-export { index, show, create, createComment, deleteFood }
+
+export { index, show, create, createComment, deleteFood, update }

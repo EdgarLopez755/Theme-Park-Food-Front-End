@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Landing from './components/Landing/Landing'
@@ -14,7 +14,7 @@ import FoodDetails from './components/FoodDetails/FoodDetails'
 import FoodForm from './components/FoodForm/FoodForm'
 
 
-
+export const AuthedUserContext = createContext(null)
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -40,7 +40,7 @@ const App = () => {
 
   const handleAddFood = async (foodFormData) => {
     const newFood = await foodService.create(foodFormData)
-    setFoods([newFood, ...foodsData])
+    setFoods([newFood, ...foods])
     navigate('/foods')
   }
 
@@ -50,26 +50,35 @@ const App = () => {
     navigate('/foods')
   }
 
+  const handleUpdateFood = async (foodId, foodFormData) => {
+    const updatedFood = await foodService.update(foodId, foodFormData)
+    setFoods(foods.map((food) => (foodId === food._id ? updatedFood : food)))
+    navigate(`/foods/${foodId}`)
+  }
+
 
   return (
     <>
-      <NavBar user={user}  handleSignout={handleSignout} /> 
-      <Routes>
-        { user ? (
-          <> 
-          <Route path="/" element={<Dashboard user={user} />} />
-          <Route path="/foods" element={<FoodList foods={foods} />} />
-          <Route path="/foods/:foodId" element={<FoodDetails handleDeleteFood={handleDeleteFood} />} />
-          <Route path="/foods/new" element={<FoodForm handleAddFood={handleAddFood} />} />
-          
-          </>
-        ) : (
-          <Route path='/' element={<Landing />} />
-          
-        )}
-        <Route path='/signup' element={<SignupForm setUser={setUser} />} />
-        <Route path='/signin' element={<SigninForm setUser={setUser} />} />
-      </Routes>
+      <AuthedUserContext.Provider value={user}>
+
+        <NavBar user={user}  handleSignout={handleSignout} /> 
+        <Routes>
+          { user ? (
+            <> 
+            <Route path="/" element={<Dashboard user={user} />} />
+            <Route path="/foods" element={<FoodList foods={foods} />} />
+            <Route path="/foods/:foodId" element={<FoodDetails handleDeleteFood={handleDeleteFood} />} />
+            <Route path="/foods/new" element={<FoodForm handleAddFood={handleAddFood} />} />
+            <Route path="/foods/:foodId/edit" element={<FoodForm handleUpdateFood={handleUpdateFood}/> } />
+            </>
+          ) : (
+            <Route path='/' element={<Landing />} />
+            
+          )}
+          <Route path='/signup' element={<SignupForm setUser={setUser} />} />
+          <Route path='/signin' element={<SigninForm setUser={setUser} />} />
+        </Routes>
+      </AuthedUserContext.Provider>
     </>
   )
 }
