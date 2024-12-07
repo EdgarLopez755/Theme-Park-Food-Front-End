@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import NavBar from './components/NavBar/NavBar'
+import NavBar from './components/NavBar/Navbar.jsx'
 import Landing from './components/Landing/Landing'
 import Dashboard from './components/Dashboard/Dashboard'
 import SignupForm from './components/SignupForm/SignupForm'
