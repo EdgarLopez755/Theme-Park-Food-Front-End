@@ -37,6 +37,37 @@ const create = async (foodFormData) => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
-export { index, show, create }
+const createComment = async (foodId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${foodId}/comments`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'apllication/json'
+      },
+      body: JSON.stringify(commentFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const deleteFood = async (foodId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${foodId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export { index, show, create, createComment, deleteFood }

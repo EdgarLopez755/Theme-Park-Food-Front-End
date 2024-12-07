@@ -43,6 +43,14 @@ const App = () => {
     setFoods([newFood, ...foodsData])
     navigate('/foods')
   }
+
+  const handleDeleteFood = async (foodId) => {
+    const deletedFood = await foodService.deleteFood(foodId)
+    setFoods(foods.filter((food) => food._id !== deletedFood._id))
+    navigate('/foods')
+  }
+
+
   return (
     <>
       <NavBar user={user}  handleSignout={handleSignout} /> 
@@ -51,8 +59,9 @@ const App = () => {
           <> 
           <Route path="/" element={<Dashboard user={user} />} />
           <Route path="/foods" element={<FoodList foods={foods} />} />
-          <Route path="/foods/:foodId" element={<FoodDetails />} />
+          <Route path="/foods/:foodId" element={<FoodDetails handleDeleteFood={handleDeleteFood} />} />
           <Route path="/foods/new" element={<FoodForm handleAddFood={handleAddFood} />} />
+          
           </>
         ) : (
           <Route path='/' element={<Landing />} />
