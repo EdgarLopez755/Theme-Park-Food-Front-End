@@ -1,10 +1,10 @@
 
+import { AuthedUserContext } from '../../App'
 import { useState, useEffect, useContext } from "react"
 import { useParams, Link } from "react-router-dom"
 
 import * as foodService from '../../services/foodService'
 import CommentForm from "../CommentForm/CommentForm"
-import { AuthedUserContext } from '../../App'
 
 
 
@@ -58,7 +58,7 @@ const FoodDetails = (props) => {
                     <article key={comment._id}>
                     <header>
                         <p>
-                        {comment.author.username} posted on
+                        {comment.username} posted on
                         {new Date(comment.createdAt).toLocaleDateString()}
                         </p>
                     </header>
