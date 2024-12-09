@@ -26,7 +26,7 @@ const FoodDetails = (props) => {
 
     const handleAddComment = async (commentFormData) => {
         const newComment = await foodService.createComment(foodId, commentFormData)
-        setFood({ ...food, comments: [...food.comments, newComment] })
+        setFood({ ...food, comments: [...food.comments, newComment]})
     }
 
     if (!food) return <main>Loading...</main>
@@ -53,7 +53,8 @@ const FoodDetails = (props) => {
                 <CommentForm handleAddComment={handleAddComment}/>
                 {!food.comments.length && <p>There are no comments.</p>}
 
-                {food.comments.map((comment) => (
+                {food.comments.map((comment) => {
+                return (
                     <article key={comment._id}>
                     <header>
                         <p>
@@ -63,11 +64,12 @@ const FoodDetails = (props) => {
                     </header>
                     <p>{comment.text}</p>
                     </article>
-                ))}
-                            </section>
-                        </main>
-                    )
-                }
+                )
+                })}
+            </section>
+        </main>
+        )        
+    }
 
 
 
