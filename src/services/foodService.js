@@ -45,7 +45,7 @@ const createComment = async (foodId, commentFormData) => {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'apllication/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(commentFormData)
     })

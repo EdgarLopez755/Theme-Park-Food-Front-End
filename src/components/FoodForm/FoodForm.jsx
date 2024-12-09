@@ -7,7 +7,7 @@ const FoodForm = (props) => {
     const [formData, setFormData] = useState({
         name: '',
         text: '',
-        location: 'Main Street'
+        location: 'Main Street',
     })
 
     const { foodId } = useParams()
