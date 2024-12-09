@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import styles from './FoodList.module.css'
 
 const FoodList = (props) => {
     return (
-        <main>
+        <main className={styles.container}>
             {props.foods.map((food) => {
                 return (
                     <Link key={food._id} to={`/foods/${food._id}`}>

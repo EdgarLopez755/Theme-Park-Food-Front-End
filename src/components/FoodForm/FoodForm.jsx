@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as foodService from '../../services/foodService'
 import { useParams } from 'react-router-dom'
+import styles from './FoodForm.module.css'
 
 
 const FoodForm = (props) => {
@@ -37,7 +38,7 @@ const FoodForm = (props) => {
 
 
     return (
-        <main>
+        <main className={styles.container}>
             <form onSubmit={handleSubmit}>
                 <h1>{foodId ? 'Edit Food' : 'New Food'}</h1>
                 <label htmlFor='name-imput'>Name</label>

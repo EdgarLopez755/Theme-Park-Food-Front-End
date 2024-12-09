@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom"
 
 import * as foodService from '../../services/foodService'
 import CommentForm from "../CommentForm/CommentForm"
+import styles from './FoodDetails.module.css'
 
 
 
@@ -32,22 +33,26 @@ const FoodDetails = (props) => {
     if (!food) return <main>Loading...</main>
 
     return (
-        <main>
+        <main className={styles.container}>
+            <section>
             <header>
                 <p>{food.location.toUpperCase()}</p>
                 <h1>{food.name}</h1>
-                <p>
-                    {food.author.username} posted on
-                    {new Date(food.createdAt).toLocaleDateString()}
-                </p>
-                {food.author._id === user._id && (
-                    <>
-                        <Link to={`/foods/${foodId}/edit`}>Edit</Link>
-                        <button onClick={() => {props.handleDeleteFood(foodId)}}>Delete</button>
-                    </>
-                )}
+                <div>
+                    <p>
+                        {food.author.username} posted on
+                        {new Date(food.createdAt).toLocaleDateString()}
+                    </p>
+                    {food.author._id === user._id && (
+                        <>
+                            <Link to={`/foods/${foodId}/edit`}>Edit</Link>
+                            <button onClick={() => {props.handleDeleteFood(foodId)}}>Delete</button>
+                        </>
+                    )}
+                </div>
             </header>
             <p>{food.text}</p>
+            </section>
             <section>
                 <h2>Comments</h2>
                 <CommentForm handleAddComment={handleAddComment}/>
@@ -57,10 +62,12 @@ const FoodDetails = (props) => {
                 return (
                     <article key={comment._id}>
                     <header>
+                        <div>
                         <p>
                         {comment.username} posted on
                         {new Date(comment.createdAt).toLocaleDateString()}
                         </p>
+                        </div>
                     </header>
                     <p>{comment.text}</p>
                     </article>

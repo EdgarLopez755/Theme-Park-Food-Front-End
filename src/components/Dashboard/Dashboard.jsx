@@ -1,12 +1,12 @@
-
+import styles from './Dashboard.module.css'
 
 const Dashboard = ({ user }) => {
   return (
-    <main>
-      <h1>Welcome back!, {user.username}</h1>
+    <main className={styles.container}>
+      <img src="https://i.postimg.cc/HL0jLDGm/temp-Image-WPP2ef.avif" alt="logo"/>
+      <h1>Welcome!, {user.username}</h1>
       <p>
-        This is the dashboard page where you, and only you, can see a dashboard
-        of all of your things.
+        Check out what NEW snacks people have been posting at Disneyland !
       </p>
       
 

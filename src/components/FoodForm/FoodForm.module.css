@@ -1,0 +1,58 @@
+.container {
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 28px 21px;
+  align-items: center;
+  flex-direction: column;
+  background-color: #FFE7BA;  
+  background-image: url('https://i.postimg.cc/CMZNcZ7B/temp-Imagetvb62-P.avif'); 
+  background-size: cover;
+  
+}
+
+.container input, textarea, select, button { 
+  width: 100%;
+  padding: 14px;
+  font-size: 20px;
+  resize: vertical;
+  border-radius: 50px; 
+  margin: 7px 0px 20px 0px;
+  border: 5px solid #996633; /* Thicker red border */
+  background-color: #fff;
+  font-family: 'Disney Script', cursive; /* Playful font */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.container textarea {
+  min-height: 50px;
+  border-radius: 20%;
+  
+}
+
+.container label {
+  font-weight: 600;
+  margin: 7px 0px 14px 0px;
+  font-family: 'Disney Script', cursive; /* Playful font */
+  color: #996633; /* Red text color */
+}
+
+.container button {
+  color: white;
+  font-weight: bold;
+  margin: 21px 0px 0px 0px;
+  background: #996633;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-family: 'Disney Script', cursive; /* Playful font */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border: 2px solid ;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}

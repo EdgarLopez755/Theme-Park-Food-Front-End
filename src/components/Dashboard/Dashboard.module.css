@@ -1,0 +1,33 @@
+
+
+
+main {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+   
+}
+
+h1 {
+  font-size: 36px;
+  font-family: 'Disney Script', cursive;
+  color: #996633;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  display: flex;
+}
+
+p {
+  font-size: 20px;
+  color: #993300f2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Disney Script', cursive;
+  justify-content: center;
+  display: flex;
+}
+

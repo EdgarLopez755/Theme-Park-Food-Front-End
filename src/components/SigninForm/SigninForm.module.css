@@ -1,0 +1,76 @@
+.container {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://i.postimg.cc/CMZNcZ7B/temp-Imagetvb62-P.avif'); 
+  background-size: cover;
+  
+}
+
+.container section {
+  width: 100%; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 28px 21px;
+}
+
+.container section:first-child {
+  background-color: #fdfeff;
+  display: flex; 
+  justify-content: center; 
+}
+
+.container img {
+  width: 65%;
+  max-width: 500px;
+}
+
+.container input,
+.container button {
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #996633; 
+  background-color: #FFE7BA; 
+}
+
+.container div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container label {
+  font-weight: 600;
+  margin: 0 0 0 7px;
+  color: #996633; 
+}
+
+.container button {
+  background-color: #996633; 
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-family: 'Disney Script', cursive; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  height: 80;
+  
+}
+
+.container a {
+  border: none;
+  font-size: 14px;
+  background: none;
+  font-weight: 500;
+  margin-top: 14px;
+  text-align: center;
+  color: #996633; 
+}
+
