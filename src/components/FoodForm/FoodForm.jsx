@@ -50,7 +50,7 @@ const FoodForm = (props) => {
                     value={formData.name}
                     onChange={handleChange}
                 />
-                <label htmlFor='text-input'>Text</label>
+                <label htmlFor='text-input'>Review</label>
                 <textarea
                     required
                     type='text'
