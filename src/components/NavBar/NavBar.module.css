@@ -1,8 +1,8 @@
 .container {
   top: 0;
-  z-index: 1;
+  z-index: 999;
   width: 100%;
-  height: 80px;
+  height: 85px;
   display: flex;
   position: fixed;
   padding: 14px 21px;
@@ -23,13 +23,14 @@
   font-weight: bold;
   align-items: center;
   justify-content: flex-end;
-  font-family: 'Disney Script', cursive; /* Fun font */
+  font-family: 'Disney Script', cursive;
+
 }
 
 .container li {
   margin-left: 35px;
   text-align: right;
-  color: #fff; /* White text */
+  color: #fff; 
   margin-right: 20px;
   padding: 10px;
   border-bottom: 1px solid #ccc;

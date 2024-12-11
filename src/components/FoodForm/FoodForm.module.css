@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column;
   background-color: #FFE7BA;  
-  background-image: url('https://i.postimg.cc/CMZNcZ7B/temp-Imagetvb62-P.avif'); 
+  background-image: url('https://i.postimg.cc/pVKj92rn/temp-Image-Lcfm-AQ.avif'); 
   background-size: cover;
   
 }
@@ -19,10 +19,10 @@
   resize: vertical;
   border-radius: 50px; 
   margin: 7px 0px 20px 0px;
-  border: 5px solid #996633; /* Thicker red border */
+  border: 5px solid #996633; 
   background-color: #fff;
-  font-family: 'Disney Script', cursive; /* Playful font */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  font-family: 'Disney Script', cursive; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); 
 }
 
 .container textarea {
@@ -34,8 +34,8 @@
 .container label {
   font-weight: 600;
   margin: 7px 0px 14px 0px;
-  font-family: 'Disney Script', cursive; /* Playful font */
-  color: #996633; /* Red text color */
+  font-family: 'Disney Script', cursive; 
+  color: #996633; 
 }
 
 .container button {
@@ -46,7 +46,7 @@
   border: none;
   border-radius: 10px;
   padding: 15px 30px;
-  font-family: 'Disney Script', cursive; /* Playful font */
+  font-family: 'Disney Script', cursive; 
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }

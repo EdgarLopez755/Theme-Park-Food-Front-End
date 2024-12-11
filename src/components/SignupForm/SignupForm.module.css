@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   background-color: #FFE7BA;
-  background-image: url('https://i.postimg.cc/CMZNcZ7B/temp-Imagetvb62-P.avif'); 
+  background-image: url('https://i.postimg.cc/pVKj92rn/temp-Image-Lcfm-AQ.avif'); 
   background-size: cover;
   
 }
@@ -67,7 +67,7 @@
   font-weight: 500;
   background: none;
   border-radius: 50%;
-  border: 1px solid #996633; /* Brown border */
+  border: 1px solid #996633; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +75,7 @@
   margin: 0 0 0 7px;
 }
 
-/* Button icon styling */
+
 .container header button img,
 .container header a img {
   width: 24px;
@@ -95,10 +95,10 @@
 }
 
 .container header button:active {
-  background-color: #663300; /* Darker brown */
+  background-color: #663300; 
 }
 
-/* Comment form styling */
+
 .container form {
   padding: 0;
   display: flex;
@@ -119,8 +119,8 @@
   resize: vertical;
   border-radius: 5px;
   margin: 14px 0px 14px 0px;
-  border: 1px solid #996633; /* Brown border */
-  background-color: #FFE7BA; /* Soft cream color */
+  border: 1px solid #996633; 
+  background-color: #FFE7BA; 
 }
 
 .container form textarea {

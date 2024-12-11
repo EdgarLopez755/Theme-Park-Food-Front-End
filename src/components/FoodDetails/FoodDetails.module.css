@@ -63,7 +63,7 @@
   margin: 0 0 0 7px;
 }
 
-/* Button icon styling */
+
 .container header button img,
 .container header a img {
   width: 24px;
@@ -109,8 +109,8 @@
   resize: vertical;
   border-radius: 5px;
   margin: 14px 0px 14px 0px;
-  border: 1px solid #996633; /* Brown border */
-  background-color: #FFE7BA; /* Soft cream color */
+  border: 1px solid #996633; 
+  background-color: #FFE7BA; 
 }
 
 .container form textarea {

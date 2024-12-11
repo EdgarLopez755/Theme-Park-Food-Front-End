@@ -3,7 +3,7 @@ import styles from './Landing.module.css'
 const Landing = () => {
     return (
       <main className={styles.container}>
-        <img src="https://i.postimg.cc/HL0jLDGm/temp-Image-WPP2ef.avif" alt="logo"/>
+        <img src="https://i.postimg.cc/SNynJCHw/temp-Imaged06e-Xc.avif" alt="logo"/>
         
         <h2>
           Share your new and favorite foods from the Disneyland Resort!
